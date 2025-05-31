@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="John Doe">
+
+
+
+
+
+<title>Note1-Basic possibility theory applied for permutation tutte polynomial | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+            <!-- MathJax配置，可通过单美元符号书写行内公式等 -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    "HTML-CSS": {
+        preferredFont: "TeX",
+        availableFonts: ["STIX","TeX"],
+        linebreaks: { automatic:true },
+        EqnChunk: (MathJax.Hub.Browser.isMobile ? 10 : 50)
+    },
+    tex2jax: {
+        inlineMath: [ ["$", "$"], ["\\(","\\)"] ],
+        processEscapes: true,
+        ignoreClass: "tex2jax_ignore|dno",
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+        equationNumbers: { autoNumber: "AMS" },
+        noUndefined: { attributes: { mathcolor: "red", mathbackground: "#FFEEEE", mathsize: "90%" } },
+        Macros: { href: "{}" }
+    },
+    messageStyle: "none"
+    });
+</script>
+<!-- 给MathJax元素添加has-jax class -->
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<!-- 通过连接CDN加载MathJax的js代码 -->
+<script type="text/javascript" async
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+        
+    
+
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const pagebody = document.getElementsByTagName('body')[0]
+
+            function setTheme(status) {
+
+                if (status === 'dark') {
+                    window.sessionStorage.theme = 'dark'
+                    pagebody.classList.add('dark-theme');
+
+                } else if (status === 'light') {
+                    window.sessionStorage.theme = 'light'
+                    pagebody.classList.remove('dark-theme');
+                }
+            };
+
+            setTheme(window.sessionStorage.theme)
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">TRchen&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/category">Categories</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">TRchen&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">
+                    <svg class="menu-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M4.5 17.27q-.213 0-.356-.145T4 16.768t.144-.356t.356-.143h15q.213 0 .356.144q.144.144.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.144T4 11.999t.144-.356t.356-.143h15q.213 0 .356.144t.144.357t-.144.356t-.356.143zm0-4.77q-.213 0-.356-.143Q4 7.443 4 7.23t.144-.356t.356-.143h15q.213 0 .356.144T20 7.23t-.144.356t-.356.144z"/></svg>
+                    <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Material Symbols Light by Google - https://github.com/google/material-design-icons/blob/master/LICENSE --><path fill="currentColor" d="m12 12.708l-5.246 5.246q-.14.14-.344.15t-.364-.15t-.16-.354t.16-.354L11.292 12L6.046 6.754q-.14-.14-.15-.344t.15-.364t.354-.16t.354.16L12 11.292l5.246-5.246q.14-.14.345-.15q.203-.01.363.15t.16.354t-.16.354L12.708 12l5.246 5.246q.14.14.15.345q.01.203-.15.363t-.354.16t-.354-.16z"/></svg>
+                </div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                <a class="menu-item" href="/archives">Posts</a>
+                
+                <a class="menu-item" href="/category">Categories</a>
+                
+                <a class="menu-item" href="/tag">Tags</a>
+                
+                <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if (toggleMenu.classList.contains("active")) {
+            toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        } else {
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Note1-Basic possibility theory applied for permutation tutte polynomial</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">John Doe</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">April 20, 2025&nbsp;&nbsp;23:53:03</a>
+                        </span>
+                    
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>这里我们只用到抽象公理化的概率论，其本身也与古典概型几何概型相容，所以只要当条件满足公理即可使用，不必纠结现实的情况。对于任意给定的集合$\Omega$，记其子集族为$\mathcal{F}\subseteq 2^{\Omega}$，当其满足：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+&\Omega\in\mathcal{F}；\\
+&\forall F\in\mathcal{F}\implies F^c\in\mathcal{F}；\\
+&\forall\{F_i\}_i\subseteq\mathcal{F}\implies\cup_iF_i\in\mathcal{F}。
+\end{array}</script><p>时，称之为$\Omega$上的$\sigma$<strong>-代数</strong>，易见可列个$\sigma$-代数的交仍是$\sigma$-代数，于是对于任意一个子集族$\mathcal{A}\subseteq 2^{\Omega}$，我们可以取到包含它的最小的也是唯一的一个$\sigma$-代数，记作$\sigma(\mathcal{A})$，称为$\mathcal{A}$生成的$\sigma$-代数，特别地将所有$\mathbb{R}^d$中开集生成的$\sigma$-代数记为$\mathcal{R}^d$，其中的元素称为<strong>Borel集</strong>。 </p>
+<p>当$\mathcal{F}$为$\sigma$-代数时，若函数$\mu:\mathcal{F}\rightarrow\mathbb{R}$满足：</p>
+<script type="math/tex; mode=display">
+\begin{array}{l}
+    \forall A:\in\mathcal{F}:\mu(A)\geq\mu(\varnothing)=0；\\
+    \mu(\sqcup_iA_i)=\sum_i\mu(A_i)$，其中\{A_i\}_i为\mathcal{F}中的可列个两两不交的元素。
+\end{array}</script><p>则称$\mu$为$(\Omega,\mathcal{F})$上的<strong>测度</strong>，进一步的当$\mu(\Omega)=1$时则称之为概率测度，一般记为$P$，将$(\Omega,\mathcal{F},P)$称为<strong>概率空间</strong>，$(\Omega,\mathcal{F})$为样本空间，$\Omega$中元素称为结果或基本事件，$\mathcal{F}$中的元素则为事件。特别地，我们只使用到$[0,1]^d$这个欧式子空间上的Lebesgue测度，其恰好构成一个概率测度，而对于$[0,1]^d$其中的任意一个明确是低维的集合由测度论可知其测度为零，例如$\{x_1=x_2,x_i\in[0,1],i\in\{3,4,\cdots,d\}\}$为$d-1$维，所以测度为零(<span style="color: red;"> 论文P11引理5.3上方两行；论文P12第二行去掉一部分零测集来代入全概率公式</span>)。下面只简单介绍所需的概率论的一些概念：</p>
+<p>$A,B\in\mathcal{F}$且$P(A)\neq0$，定义<strong>条件概率</strong>为$P(A|B)=P(AB)/P(B)$，这里为方便将集合的交写作积的形式，由此可得当$\Omega=\sqcup_iB_i$时，有</p>
+<script type="math/tex; mode=display">P(A)=\sum_iP(B_i)P(A|B_i)</script><p>称为<strong>全概率公式</strong>(<span style="color: red;">论文P12第二行</span>);</p>
+<p>$A,B\in\mathcal{F}$，当$P(A)P(B)=P(AB)$时称$A,B$两<strong>事件独立</strong>；</p>
+<p>$X:\Omega\rightarrow\mathbb{R}$是一个实值函数，若对任意Borel集$A\in\mathcal{R}$都有$\{\omega\in\Omega|X(\omega)\in A\}\in\mathcal{F}$成立，则称$X$为概率空间上的实值<strong>随机变量</strong>，简记$\{\omega\in\Omega|X(\omega)\in A\}$为$\{X\in A\}$或$X^{-1}(A)$。根据随机变量的取值范围可将其分成离散型和连续型；</p>
+<p>给定一个随机变量$X$，称$P(X^{-1}(A))(\forall A\in\mathcal{R})$为随机变量$X$的分布，$F(x)=P(X\leq x)(x\in\mathbb{R})$为随机变量$X$的<strong>分布函数</strong>，二者可相互决定，也就是说两个随机变量拥有同样的分布函数当且仅当二者分布也相同。对于连续型随机变量，若存在函数$f$使得$P(X\in A)=\int_Af(t)dt(\forall A\in\mathcal{R})$成立，则称$f$为这个随机变量的<strong>概率密度函数</strong>。当随机变量的分布服从某种分布$F$时，记$X\sim F$，我们只需用到$[0,1]$上的均匀分布$U(0,1)$，其概率密度函数为</p>
+<script type="math/tex; mode=display">f(t)=\begin{cases}
+    1, & 0 \leq t \leq 1 \\
+    0, & \text{otherwise}
+    \end{cases}</script><p>设有限个随机变量$X_k$的分布函数为$F_k$，若联合分布函数$F(x_1,x_2,\cdots,x_m)=P(X_1\leq x_1,X_2\leq x_2,\cdots,X_m\leq x_m)$与$\prod_kF_k(x_k)$相同，则称这些随机变量相互独立，将$m$个随机变量$X_k$相互独立且服从同分布$F$记为$X_k\sim F(1\leq k\leq m)i.i.d$(<span style="color: red;"> Independent and Identically Distributed 所有的前提条件</span>)。进一步地对于一些相互独立的随机变量的联合分布，其对应的概率密度函数便是其各个随机变量的密度函数的乘积。例如若$X_k\sim U(0,1)(1\leq k\leq m)i.i.d$，则其概率密度函数为</p>
+<script type="math/tex; mode=display">f(t_1,t_2,\cdots,t_m)=\begin{cases}
+    1, & 0 \leq t_k \leq 1\quad\forall k \\
+    0, & \text{otherwise}
+    \end{cases}</script><p>由定义便可知对于任意$A\in\mathcal{R}$都有$P(X^{-1}(A))=\int_Adt_1dt_2\cdots dt_m$(<span style="color: red;"> 论文中涉及$P$的运算</span>)；</p>
+<script type="math/tex; mode=display">
+f(x) = 
+\begin{cases}
+0 & x为无理数 \\
+x & x为有理数 \\
+\end{cases}</script><p>最后再给出离散型随机变量的<strong>期望</strong>的定义，即$E[X]=\sum_ix_iP(X=x_i)$(<span style="color: red;"> 论文涉及期望的所有计算</span>)。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>John Doe</span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>Permalink:</span>
+                        <span><a href="http://example.com/2025/04/20/Note1-Basic%20possibility%20theory%20applied%20for%20permutation%20tutte%20polynomial/">http://example.com/2025/04/20/Note1-Basic%20possibility%20theory%20applied%20for%20permutation%20tutte%20polynomial/</a></span>
+                    </p>
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
+                    </p>
+                
+                
+                     <p class="copyright-item">
+                         <span>Slogan:</span>
+                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                     </p>
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                    
+                        <a href="/tags/possibility-theory/"># possibility theory</a>
+                    
+                        
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2025/04/20/%E8%AF%BB%E8%AE%BA%E6%96%871-The%20merino-welsh%20conjecture%20is%20false%20for%20matroid/">读论文1-The merino-welsh conjecture is false for matroid</a>
+            
+            
+            <a class="next" rel="next" href="/2025/04/20/%E8%AF%BB%E8%AE%BA%E6%96%872-Permutation%20Tutte%20polynomial/">读论文2-Permutation Tutte polynomial</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© John Doe | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
