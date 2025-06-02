@@ -181,14 +181,19 @@
             
                 <div class="post-meta">
                     
-                        Author: <a itemprop="author" rel="author" href="/">John Doe</a>
-                    
 
                     
                         <span class="post-time">
-                        Date: <a href="#">April 20, 2025&nbsp;&nbsp;23:53:03</a>
+                        Date: <a href="#">October 7, 2024&nbsp;&nbsp;12:33:02</a>
                         </span>
                     
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/%E6%95%B0%E5%AD%A6%E9%98%85%E8%AF%BB/">数学阅读</a>
+                            
+                        </span>
                     
                 </div>
             
@@ -196,35 +201,22 @@
 
         <div class="post-content">
             <p><a target="_blank" rel="noopener" href="https://doi.org/10.1016/j.aim.2024.109674">https://doi.org/10.1016/j.aim.2024.109674</a></p>
-<p>该篇文章比较简单但工具感觉很有趣，首先从第三部分intuition看起，他们在研究拟阵的一种局部结构“由基关联的二部图”时发现了一些神秘的关系，也就是给所有基各自关联的二部图对应给出一个多项式，称之为permutation Tutte polynomial，将其求和便恰好可以得到拟阵的Tutte polynomial，还发现如果对于每个基的permutation Tutte polynomial的对应猜想都成立，那么原拟阵对应猜想也必然成立。考虑猜想对应的这个比值<br>$$Portion(f,x)&#x3D;\frac{f_{\cdot}(x,0)f_{\cdot}(0,x)}{f_{\cdot}(1,1)^2}$$<br>其中$f$为任一多项式，经过计算发现对于一个二部图给它添加些悬挂边可能会降低这个比值，接下来就是如何构造出这么一个拟阵使其每个基关联的二部图尽量多挂一些悬挂边来看一下能否降低这个比值。</p>
-<p>第二部分counter-example便是直接给出了这么一个反例，且给出了一个$x$的范围使得在这个范围之内都存在有拟阵使得$Portion(T_M,x)&lt;1$。这里核心的证明只有引理$2.3$和引理$2.4$，基本就是直接的替换和计算化简，只提两点可能比较特别的：一、这里的估计$f\thicksim g$是指$f&#x2F;g$能被控制在多项式增长速度之下，并非常见的等价无穷小量之类的概念，这里不需要$n$趋近于什么；证明中用到了信息论中entropy的概念，其中的$H(\alpha)$就是binary entropy function的概念，有著名结论：<br>$$\frac{2^{-nH(\alpha)}}{n+1}\leq\binom{n}{n\alpha}\leq 2^{-nH(\alpha)}$$<br>这个$2$底并不本质，由此可以看到$\binom{n}{n\alpha}e^{nH(\alpha)}$是被控制在一个多项式增长之中的，有限项求和后也仍是如此。</p>
+<p>该篇文章比较简单但工具感觉很有趣，首先从第三部分intuition看起，他们在研究拟阵的一种局部结构“由基关联的二部图”时发现了一些神秘的关系，也就是给所有基各自关联的二部图对应给出一个多项式，称之为permutation Tutte polynomial，将其求和便恰好可以得到拟阵的Tutte polynomial，还发现如果对于每个基的permutation Tutte polynomial的对应猜想都成立，那么原拟阵对应猜想也必然成立。考虑猜想对应的这个比值</p>
+<script type="math/tex; mode=display">Portion(f,x)=\frac{f_{\cdot}(x,0)f_{\cdot}(0,x)}{f_{\cdot}(1,1)^2}</script><p>其中$f$为任一多项式，经过计算发现对于一个二部图给它添加些悬挂边可能会降低这个比值，接下来就是如何构造出这么一个拟阵使其每个基关联的二部图尽量多挂一些悬挂边来看一下能否降低这个比值。</p>
+<p>第二部分counter-example便是直接给出了这么一个反例，且给出了一个$x$的范围使得在这个范围之内都存在有拟阵使得$Portion(T_M,x)&lt;1$。这里核心的证明只有引理$2.3$和引理$2.4$，基本就是直接的替换和计算化简，只提两点可能比较特别的：一、这里的估计$f\thicksim g$是指$f/g$能被控制在多项式增长速度之下，并非常见的等价无穷小量之类的概念，这里不需要$n$趋近于什么；证明中用到了信息论中entropy的概念，其中的$H(\alpha)$就是binary entropy function的概念，有著名结论：</p>
+<script type="math/tex; mode=display">\frac{2^{-nH(\alpha)}}{n+1}\leq\binom{n}{n\alpha}\leq 2^{-nH(\alpha)}</script><p>这个$2$底并不本质，由此可以看到$\binom{n}{n\alpha}e^{nH(\alpha)}$是被控制在一个多项式增长之中的，有限项求和后也仍是如此。</p>
 
         </div>
 
         
             <section class="post-copyright">
                 
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>John Doe</span>
-                    </p>
                 
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://example.com/2025/04/20/%E8%AF%BB%E8%AE%BA%E6%96%871-The%20merino-welsh%20conjecture%20is%20false%20for%20matroid/">http://example.com/2025/04/20/%E8%AF%BB%E8%AE%BA%E6%96%871-The%20merino-welsh%20conjecture%20is%20false%20for%20matroid/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc/4.0/">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
                 
                 
                      <p class="copyright-item">
                          <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
+                         <span>爾今死去儂收葬，未卜儂身何日喪？儂今葬花人笑癡，他年葬儂知是誰？</span>
                      </p>
                 
 
@@ -238,6 +230,8 @@
                     
                         <a href="/tags/matroid/"># matroid</a>
                     
+                        <a href="/tags/tutte-polynomial/"># tutte polynomial</a>
+                    
                         
                 </span>
             </div>
@@ -249,10 +243,10 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2025/05/31/Note2-%E6%8B%9F%E9%98%B5%E5%B8%B8%E8%A7%81%E5%85%AC%E7%90%86%E4%BD%93%E7%B3%BB%E7%AD%89%E4%BB%B7%E6%80%A7%E8%AF%81%E6%98%8E/">Note2-拟阵常见公理体系等价性证明</a>
+                <a class="prev" rel="prev" href="/2025/04/20/%E8%AF%BB%E8%AE%BA%E6%96%872-Permutation%20Tutte%20polynomial/">读论文2-Permutation Tutte polynomial</a>
             
             
-            <a class="next" rel="next" href="/2025/04/20/Note1-Basic%20possibility%20theory%20applied%20for%20permutation%20tutte%20polynomial/">Note1-Basic possibility theory applied for permutation tutte polynomial</a>
+            <a class="next" rel="next" href="/2024/01/21/%E6%B5%8B%E8%AF%95/">测试页面</a>
             
         </section>
 
